@@ -26,4 +26,5 @@ pnpm-debug.log*
 # image files
 .img/
 
+img/
 
