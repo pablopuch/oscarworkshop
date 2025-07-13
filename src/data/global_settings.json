@@ -9,28 +9,7 @@
     "cta": "Book a call"
   },
   "theme_color": "#18181b",
-  "nav": [
-    {
-      "title": "Services",
-      "link": "/#services"
-    },
-    {
-      "title": "Case studies",
-      "link": "/#case-studies"
-    },
-    {
-      "title": "Pricing",
-      "link": "/#pricing"
-    },
-    {
-      "title": "FAQ",
-      "link": "/#faq"
-    },
-    {
-      "title": "Newsletter",
-      "link": "/#newsletter"
-    }
-  ],
+
 
   "social_links": [
     {

@@ -18,19 +18,6 @@ const { settings } = Astro.props
 
     </a>
 
-    <!-- Nav -->
-    <nav class="hidden col-span-6 md:flex mx-auto self-stretch lg:gap-2">
-
-      <!-- Links -->
-      { settings.nav.map( item =>
-
-        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={item.link}>
-          { item.title }
-        </a>
-
-      )}
-
-    </nav>
 
     <!-- CTA -->
     <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
