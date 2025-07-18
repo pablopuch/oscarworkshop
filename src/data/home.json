@@ -1,14 +1,14 @@
 {
-  "hero_title": "blackspike astro landing page",
-  "hero_content": "<p><strong>A free Astro landing theme made with Tailwind</strong> to help kick start your Astro website.</p><p>Uses modern CSS and HTML features for added zip, plus a slick swiper carousel. All in Astro JSX.</p>",
-  "services_title": "Our services",
-  "clients_title": "Trusted by some great companies",
-  "testimonials_title": "Clients ♥ us",
-  "case_studies_title": "Case studies",
-  "pricing_title": "We do design retainers",
-  "quote_content": "This <strong>design agency</strong> is a <strong>game changer</strong>. Its <strong>creative vision</strong>, <strong>user-focused approach</strong>, and <strong>seamless collaboration</strong> have <strong>transformed</strong> the way we <strong>build our brand</strong>. It’s <strong>not just an agency</strong> — it’s a <strong>powerful partner</strong> that <strong>delivers real results</strong>.",
-  "quote_cite": "Sean Higgins",
-  "quote_role": "CTO, Interia",
-  "quote_image": "/content-images/quote-man.avif",
-  "faq_title": "Frequently Asked Questions"
+  "hero_title": "OSCAR WORKSHOP",
+  "hero_content": "<p><strong>Servicio de reparación de bicicletas – Mecánico Certificado UCI Nivel 2 y Shimano 2024</strong></p>",
+  "services_title": "Servicios",
+  "clients_title": "Clientes satisfechos",
+  "testimonials_title": "Lo que opinan mis clientes",
+  "case_studies_title": "Casos de éxito",
+  "pricing_title": "Solicita tu presupuesto",
+  "quote_content": "Oscar Workshop es un <strong>referente en calidad y confianza</strong> para el ciclista. Servicio profesional, trato cercano y resultados impecables.",
+  "quote_cite": "Cliente satisfecho",
+  "quote_role": "Ciclista",
+  "quote_image": "/theme-images/oscar_workshop.jpg",
+  "faq_title": "Preguntas frecuentes"
 }

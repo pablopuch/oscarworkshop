@@ -1,43 +1,43 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
-import Layout from "../layouts/Layout.astro"
+import CaseStudiesSection from "../components/CaseStudiesSection.astro";
+import FaqSection from "../components/FaqSection.astro";
+import HeroSection from "../components/HeroSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import HighlightsSection from "../components/HighlightsSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import AboutOscarSection from "../components/AboutOscarSection.astro";
 
-import CaseStudiesSection from "../components/CaseStudiesSection.astro"
-import FaqSection from "../components/FaqSection.astro"
-import HeroSection from "../components/HeroSection.astro"
-import TestimonialsSection from "../components/TestimonialsSection.astro"
-
-import caseStudies from "../data/case_studies.json"
-import faq from "../data/faq.json"
-import home from "../data/home.json"
-import global_settings from "../data/global_settings.json"
-import newsletter from "../data/newsletter.json"
-import testimonials from "../data/testimonials.json"
-
+import caseStudies from "../data/case_studies.json";
+import faq from "../data/faq.json";
+import home from "../data/home.json";
+import global_settings from "../data/global_settings.json";
+import testimonials from "../data/testimonials.json";
 ---
 
-<Layout title={ global_settings.title }>
-
+<Layout title={global_settings.title}>
   <HeroSection
-    content={ home.hero_content }
-    settings={ global_settings }
-    title={ home.hero_title }
+    content={home.hero_content}
+    settings={global_settings}
+    title={home.hero_title}
   />
 
+  <HighlightsSection />
+
+  <ServicesSection />
 
   <CaseStudiesSection
-    caseStudies={ caseStudies }
-    title={ home.case_studies_title }
+    caseStudies={caseStudies}
+    title={home.case_studies_title}
   />
 
   <TestimonialsSection
-    testimonials={ testimonials }
-    title={ home.testimonials_title }
+    testimonials={testimonials}
+    title={home.testimonials_title}
   />
 
-  <FaqSection
-    faq={ faq }
-    title={ home.faq_title }
-  />
+  <FaqSection faq={faq} title={home.faq_title} />
 
+  <AboutOscarSection />
 </Layout>

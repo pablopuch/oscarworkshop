@@ -1,31 +1,27 @@
 ---
-
-import Logo from '../assets/theme-images/logo.svg'
-
-const { settings } = Astro.props
-
+const { settings } = Astro.props;
 ---
 
 <header class="wrapper bg-loop font-semibold">
-
   <!-- Wrapper -->
   <div class="bs-container py-6 flex justify-between items-center">
+    <!-- Logo + Nombre animado -->
+    <a
+      class="flex items-center gap-4 xl:min-w-32 group"
+      href="/"
+      aria-label={settings.title + " - Home"}
+    >
 
-    <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href="/" aria-label={ settings.title + ' - Home' }>
-
-      <Logo class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="48" width="48" />
-
+      <span
+        class="logo-title text-3xl md:text-4xl transition-all duration-500 group-hover:text-[#6d5fc1] group-hover:scale-105"
+      >
+        OSCAR WORKSHOP
+      </span>
     </a>
-
 
     <!-- CTA -->
     <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
-
-      { settings.demo.title }
-
+      {settings.demo.title}
     </button>
-
   </div>
-
 </header>

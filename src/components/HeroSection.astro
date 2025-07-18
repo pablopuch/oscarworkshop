@@ -1,35 +1,32 @@
 ---
-
-import Image from "astro/components/Image.astro"
-import hero_screens from "../assets/theme-images/hero-screens.png"
-
-const { settings, title, content } = Astro.props
-
+import Image from "astro/components/Image.astro";
+const heroBg = "/theme-images/oscar_workshop3.jpg";
 ---
 
-<section class="bs-container py-6 flex flex-col lg:flex-row items-center">
-
-  <!-- Content -->
-  <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
-
-    <!-- Title -->
-    <h1 class="bs-h1" set:html={ title } />
-
-    <!-- Content -->
-    <div class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark" set:html={ content } />
-
-    <!-- CTA -->
-    <button type="button" class="bs-btn self-start bs-mt-sm" onclick="demo.showModal()">
-      { settings.demo.cta }
-    </button>
-
+<section
+  class="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden"
+>
+  <!-- Imagen de fondo -->
+  <div class="absolute inset-0 -z-10">
+    <img
+      src={heroBg}
+      alt="Taller Oscar Workshop"
+      class="w-full h-full object-cover object-center brightness-60 blur-[2px]"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
   </div>
+  <!-- Contenido centrado -->
+  <div
+    class="flex flex-col items-center justify-center gap-6 z-10 py-20 w-full"
+  >
 
-  <!-- Image -->
-  <figure class="flex place-content-center -mt-20 lg:mt-0">
-
-    <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" />
-
-  </figure>
-
+    <p
+      class="text-lg md:text-2xl font-semibold text-white text-center drop-shadow"
+    >
+      Servicio de reparación de bicicletas – Mecánico Certificado UCI Nivel 2 y
+      Shimano 2024
+    </p>
+    <a href="/contacto" class="bs-btn mt-4"> Reserva tu reparación </a>
+  </div>
 </section>

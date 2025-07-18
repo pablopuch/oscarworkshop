@@ -1,0 +1,58 @@
+---
+// src/components/AboutOscarSection.astro
+---
+
+<section class="w-full flex flex-col items-center py-12 bg-bs-surface-2">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-[#554a8e]">
+        Sobre Oscar
+    </h2>
+    <div class="flex flex-col md:flex-row gap-8 items-center max-w-5xl w-full">
+        <!-- Foto de Oscar -->
+        <img
+            src="/theme-images/oscar_workshop.jpg"
+            alt="Oscar Santana"
+            class="rounded-lg shadow w-64 h-80 object-cover"
+            loading="lazy"
+        />
+        <!-- Biografía y valores -->
+        <div class="flex-1 flex flex-col gap-4">
+            <p class="text-lg">
+                Soy Oscar Santana y tengo 27 años. Apasionado del ciclismo y la
+                mecánica desde hace algunos años, y tras mucho tiempo de
+                formación y dedicación como mecánico, inicio este loco proyecto
+                que guardaba en mi mente desde hace mucho tiempo.
+            </p>
+            <p class="text-lg">
+                Quien me conoce sabe que me gusta el trabajo de calidad y bien
+                hecho. Y eso es lo que ofrezco: <span class="font-semibold"
+                    >calidad, efectividad, inmediatez y tranquilidad</span
+                >.
+            </p>
+            <p class="text-lg">
+                Espero pronto seguir contando más avances sobre este proyecto
+                que poco a poco va cogiendo forma.
+            </p>
+            <ul class="list-disc pl-6 mt-2 text-base text-[#554a8e]">
+                <li>Mecánico Certificado UCI Nivel 2 🌈</li>
+                <li>Mecánico Certificado Shimano 2024 👨🏻‍🔧</li>
+                <li>Recogida de bicicletas a domicilio 🏠</li>
+                <li>Asistencia integral y apoyo al ciclista</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Mapa de ubicación -->
+    <div class="w-full max-w-3xl mt-10">
+        <iframe
+            src="https://www.google.com/maps?q=Camino+Cruz+del+Gamonal,+150,+Santa+Br%C3%ADgida,+Canarias,+Spain+35300&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="text-center text-sm text-gray-600 mt-2">
+            Camino Cruz del Gamonal, Nº150, Santa Brígida, Canarias, Spain 35300
+        </p>
+    </div>
+</section>
+
