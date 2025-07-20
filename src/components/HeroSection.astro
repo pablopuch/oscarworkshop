@@ -1,33 +1,32 @@
 ---
 import Image from "astro/components/Image.astro";
 import oscar_workshop3 from "../assets/theme-images/oscar_workshop3.jpg";
+
+const { settings, title, content } = Astro.props;
 ---
 
-<section
-  class="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden"
->
+<section class="bs-container py-6 flex flex-col lg:flex-row items-center">
   <div
     class="flex flex-col md:flex-row items-center justify-center gap-10 z-10 py-20 w-full max-w-5xl mx-auto"
   >
-    <div
-      class="flex flex-col items-center md:items-start justify-center gap-6 flex-1"
-    >
-      <p
-        class="text-xl md:text-2xl font-semibold text-white text-center md:text-left drop-shadow"
-      >
-        Taller de bicicletas certificado UCI y Shimano
-      </p>
-      <a href="/contacto" class="bs-btn mt-2">Reserva tu reparación</a>
+    <!-- Content -->
+    <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
+      <!-- Title -->
+      <h1 class="bs-h1" set:html={title} />
+
+      <!-- Content -->
+      <div
+        class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark"
+        set:html={content}
+      />
     </div>
-    <figure class="flex justify-center flex-1">
+
+    <figure class="flex place-content-center -mt-20 lg:mt-0">
       <Image
         src={oscar_workshop3}
         format="avif"
         quality="high"
         alt="Taller Oscar Workshop"
-        width={650}
-        height={450}
-        class="rounded-lg shadow-lg object-cover"
         loading="eager"
       />
     </figure>
