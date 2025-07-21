@@ -1,5 +1,13 @@
 [
   {
+    "quote": "Servicio muy rápido y eficiente. Te la recoge en casa si no puedes llevarla. Muy contenta con el resultado, la bici quedó como nueva",
+    "handle": "Yurena Castrillo"
+  },
+  {
+    "quote": "Muy buen servicio, rápido y sincero. Detalle de que te la recojan en casa para realizar todo lo que necesitas",
+    "handle": "Giuseppe Trainer"
+  },
+  {
     "quote": "Mecánico de pasión, formación y profesional de vocación, se encargó de desmontar mi bicicleta por completo para luego volverla a montar de la misma manera, quedando impecable en ambas acciones, siempre dando el máximo en su trabajo, preocupándose por los detalles. Servicio de recogida a domicilio y entrega de bicicleta limpia si lo solicitas. Dedicación y compromiso en cada bicicleta nada más que añadir.",
     "handle": "calero"
   },
@@ -10,14 +18,6 @@
   {
     "quote": "Puntual, profesional, serio y muy amable. Si necesitas que tu bici esté en buenas manos, con servicio rápido y fiable sin duda es aquí. Además el servicio de recogida y entrega en casa lo hace todo muy fácil. 100% recomendable",
     "handle": "Jorge Manzano"
-  },
-  {
-    "quote": "Servicio muy rápido y eficiente. Te la recoge en casa si no puedes llevarla. Muy contenta con el resultado, la bici quedó como nueva",
-    "handle": "Yurena Castrillo"
-  },
-  {
-    "quote": "Muy buen servicio, rápido y sincero. Detalle de que te la recojan en casa para realizar todo lo que necesitas",
-    "handle": "Giuseppe Trainer"
   },
   {
     "quote": "Un profesional, preocupado por cumplir con las expectativas del cliente. Recogida y entrega de la bicicleta en tiempo y forma. Informando siempre de lo que se le hace a la bicicleta. Volveré a contar con sus servicios. Muy recomendable.",
@@ -40,6 +40,10 @@
     "handle": "Canarias Yachts"
   },
   {
+    "quote": "Muy buen trato, gran profesional y el plus de recoger y traer la bici",
+    "handle": "Alexis Merino"
+  },
+  {
     "quote": "Si buscas a un mecánico de bicis de confianza, Óscar es la mejor elección. Titulado por la UCI, su experiencia y dedicación son insuperables. Además, ofrece un servicio de recogida de bicicletas a domicilio que es comodísimo. Mi bici quedó como nueva después de pasar por sus manos. ¡Recomendadísimo! 🚴‍♂️🔧",
     "handle": "Borja Benítez"
   },
@@ -50,10 +54,6 @@
   {
     "quote": "SERVICIO TOP. Muy rapido para contestarme, aclararme mis dudas y aconsejarme. Sin duda se que mi bici esta en buenas manos.",
     "handle": "Oliver Navarro García"
-  },
-  {
-    "quote": "Muy buen trato, gran profesional y el plus de recoger y traer la bici",
-    "handle": "Alexis Merino"
   },
   {
     "quote": "Servicio de máxima calidad. Recomendable 100%. En ningún sitio tratan la bici con el cariño y dedicación q lo hace Oscar.",
@@ -78,13 +78,5 @@
   {
     "quote": "Gran profesional, me ha reparado mi bici y ha quedado muy bien. Recomendado 100%.",
     "handle": "Juan Artiles"
-  },
-  {
-    "quote": "Detallista hasta el más mínimo detalle, resolutivo y eficaz, limpio en el trabajo y con servicio de la recogida y entrega en domicilio de la bicicleta. Recomendable totalmente.",
-    "handle": "JUAN FERNANDO GONZALEZ MAYOR"
-  },
-  {
-    "quote": "Trato muy muy cordial, gran mecánico (certificado UCI), con Oscar son TODO facilidades lo recomiendo 100%, se nota que le gusta y disfruta con el trabajo bien hecho.",
-    "handle": "Jorge Morales"
   }
 ]

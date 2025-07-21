@@ -1,30 +1,29 @@
 ---
-
-import CardCaseStudy from './CardCaseStudy.astro'
-
-const { title, caseStudies } = Astro.props
-
+import CardCaseStudy from "./CardCaseStudy.astro";
+import services from "../data/services.json";
 ---
 
-<section class="bs-container bs-mt-lg" id="case-studies">
-
+<section class="bs-container bs-mt-lg" id="servicios">
   <!-- Header -->
-  { title && <h2 class="bs-h2 text-center md:text-left">{ title }</h2> }
+  <h2 class="bs-h2 text-center md:text-left">Servicios</h2>
 
-  <!-- Case Study 1 -->
+  <!-- Servicio principal -->
   <div class="bs-mt-md">
-
-    <CardCaseStudy caseStudy={ caseStudies[0] } />
-
+    <CardCaseStudy
+      caseStudy={services[0]}
+      serviceDescription={services[0].description}
+    />
   </div>
 
-  <!-- Case studies -->
+  <!-- Otros servicios -->
   <div class="mt-8 grid lg:grid-cols-2 gap-8">
-
-    <CardCaseStudy caseStudy={ caseStudies[1] } />
-    <CardCaseStudy caseStudy={ caseStudies[2] } />
-
+    <CardCaseStudy
+      caseStudy={services[1]}
+      serviceDescription={services[1].description}
+    />
+    <CardCaseStudy
+      caseStudy={services[2]}
+      serviceDescription={services[2].description}
+    />
   </div>
-
 </section>
-
