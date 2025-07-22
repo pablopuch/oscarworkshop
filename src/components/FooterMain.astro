@@ -5,49 +5,155 @@ const { settings } = Astro.props;
 ---
 
 <footer
-  class="@container bs-container my-24 font-semibold text-bs-foreground-dark [&_a]:hover:text-bs-foreground-light [&_a]:transition-color [&_a]:duration-150"
+  class="@container bs-container my-24 font-semibold text-bs-foreground-dark [&_a]:hover:text-bs-foreground-light [&_a]:transition-color [&_a]:duration-150 relative overflow-hidden"
   id="contact"
 >
+  {/* Franja decorativa superior */}
+  <div
+    class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-[#554a8e] via-[#7c6fd6] to-[#554a8e] opacity-80 animate-gradient-move"
+  >
+  </div>
   <!-- Wrapper -->
-  <div class="bg-bs-surface-2 p-6 md:p-16 rounded-xl grid md:grid-cols-2 gap-8">
-    <!-- Left col -->
+  <div
+    class="bg-bs-surface-2 p-6 md:p-16 rounded-xl grid md:grid-cols-2 gap-8 animate-fadein-slideup"
+  >
+    <!-- Columna izquierda -->
     <div
       class="w-max flex flex-col gap-8 md:gap-0 justify-between text-bs-foreground-light"
     >
       <!-- Logo -->
-      <a class="flex group" href="#top" aria-label="Back to top">
+      <a class="flex group" href="#top" aria-label="Volver arriba">
         <Logo
           class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000"
           height="48"
           width="48"
         />
       </a>
-
-      <!-- CTA title -->
-      <h2 class="bs-h3">{settings.demo.title}</h2>
-
-      <!-- CTA Button -->
+      <!-- Título CTA -->
+      <h2 class="bs-h3" style="color: #554a8e;">
+        ¿Listo para poner tu bici a punto?
+      </h2>
+      <!-- Botón CTA -->
       <button
         type="button"
-        class="min-w-32 bs-btn block bg-bs-surface-3"
-        onclick="demo.showModal()"
+        class="min-w-32 bs-btn block bg-[#554a8e] text-white animate-pulse-onhover"
+        onclick="demo.showModal()">Reserva tu reparación</button
       >
-        {settings.demo.cta}
-      </button>
+      <!-- Horario -->
+      <div class="mt-6 text-sm text-gray-400">
+        <strong>Horario:</strong><br />
+        Lunes a Viernes: 9:00 - 19:00<br />
+        Sábados: 10:00 - 14:00<br />
+        Domingos: Cerrado
+      </div>
     </div>
-
-    <!-- Right col -->
-    <div
-      class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2"
-    >
-      <!-- Social links -->
-      <nav class="flex flex-col">
-        {
-          settings.social_links
-            .sort((a, b) => a.title.localeCompare(b.title))
-            .map((item) => <a href={item.link}>{item.title}</a>)
-        }
+    <!-- Columna derecha -->
+    <div class="flex flex-col gap-6 md:justify-end">
+      <!-- Enlaces rápidos -->
+      <nav class="flex flex-col gap-2 mb-4">
+        <a href="#servicios" class="footer-link">Servicios</a>
+        <a href="#galeria" class="footer-link">Galería</a>
+        <a href="#testimonios" class="footer-link">Testimonios</a>
+        <a href="#contacto" class="footer-link">Contacto</a>
       </nav>
+      <!-- Separador animado -->
+      <div
+        class="h-1 w-24 bg-gradient-to-r from-[#554a8e] to-[#7c6fd6] rounded-full animate-gradient-move mb-2"
+      >
+      </div>
+      <!-- Redes sociales -->
+      <div class="flex gap-4 items-center">
+        {
+          settings.social_links &&
+            settings.social_links.map((item) => (
+              <a
+                href={item.link}
+                aria-label={item.title}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social"
+              >
+                {/* Aquí podrías usar un icono SVG según la red social */}
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#554a8e"
+                  class="transition-transform duration-300 group-hover:scale-125"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </a>
+            ))
+        }
+      </div>
+      <!-- Info legal -->
+      <div class="text-xs text-gray-400 mt-4">
+        © {new Date().getFullYear()} Oscar Workshop. Todos los derechos reservados.
+      </div>
     </div>
   </div>
+  <style>
+    @keyframes fadein-slideup {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadein-slideup {
+      animation: fadein-slideup 1s both;
+    }
+    .footer-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .footer-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: #554a8e;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .footer-link:hover {
+      color: #554a8e;
+    }
+    .footer-link:hover::after {
+      transform: scaleX(1);
+    }
+    .footer-social:hover svg {
+      fill: #7c6fd6;
+      transform: scale(1.2);
+    }
+    @keyframes gradient-move {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    .animate-gradient-move {
+      background-size: 200% 200%;
+      animation: gradient-move 3s linear infinite alternate;
+    }
+    .animate-pulse-onhover:hover {
+      animation: pulse 0.7s infinite alternate;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 #554a8e44;
+      }
+      100% {
+        box-shadow: 0 0 0 8px #554a8e11;
+      }
+    }
+  </style>
 </footer>

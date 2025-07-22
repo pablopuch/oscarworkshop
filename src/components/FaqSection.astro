@@ -1,26 +1,76 @@
 ---
+import DetailsAccordion from "./DetailsAccordion.astro";
 
-import DetailsAccordion from "./DetailsAccordion.astro"
-
-const { title, faq } = Astro.props
-
+const { title, faq } = Astro.props;
 ---
 
-<section class="bs-container bs-mt-lg grid" id="faq">
-
+<section
+  class="bs-container bs-mt-lg grid"
+  id="faq"
+  style="background: #111; border-radius: 2rem; box-shadow: 0 4px 32px #554a8e22; padding: 2rem 1rem;"
+>
   <!-- Title -->
-  { title && <h2 class="bs-h2 text-center md:text-left" set:html={ title } />}
-
+  <h2
+    class="bs-h2 text-center md:text-left"
+    style="font-family: 'Armageda', sans-serif; color: #fff; text-transform: uppercase;"
+  >
+    Preguntas frecuentes
+  </h2>
   <!-- FAQ -->
   <div class="grid gap-2 bs-mt-sm">
-
-    <!-- Item -->
-    { faq.map( item =>
-
-      <DetailsAccordion question={item.question} answer={item.answer} />
-
-    )}
-
+    <DetailsAccordion
+      question="¿Cuánto tarda una reparación habitual?"
+      answer="Depende del tipo de reparación, pero la mayoría se completan en 24-48h. Si necesitas urgencia, ¡avísanos!"
+    />
+    <DetailsAccordion
+      question="¿Puedo pedir recogida y entrega a domicilio?"
+      answer="¡Por supuesto! Ofrecemos recogida y entrega en tu domicilio para máxima comodidad."
+    />
+    <DetailsAccordion
+      question="¿Qué tipo de bicicletas reparáis?"
+      answer="Trabajamos con todo tipo de bicicletas: carretera, montaña, eléctricas, urbanas y más."
+    />
+    <DetailsAccordion
+      question="¿Qué garantía tienen las reparaciones?"
+      answer="Todas nuestras reparaciones tienen garantía de satisfacción y repuestos originales."
+    />
+    <DetailsAccordion
+      question="¿Puedo pedir presupuesto sin compromiso?"
+      answer="Sí, puedes contactarnos y te daremos un presupuesto personalizado sin compromiso."
+    />
   </div>
-
+  <style>
+    details {
+      transition:
+        box-shadow 0.3s,
+        background 0.3s;
+      box-shadow: 0 2px 8px #554a8e11;
+      background: #222;
+      border-radius: 1rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    details[open] {
+      box-shadow: 0 4px 24px #554a8e22;
+      background: #18122b;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+    summary:hover {
+      color: #7c6fd6;
+    }
+    summary svg {
+      transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+    }
+    details[open] summary svg {
+      transform: rotate(90deg);
+    }
+  </style>
 </section>

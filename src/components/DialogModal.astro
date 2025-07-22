@@ -1,112 +1,164 @@
 ---
+import X from "../assets/theme-images/icon-x.svg";
 
-import X from '../assets/theme-images/icon-x.svg'
-
-const { content } = Astro.props
-
+const { content } = Astro.props;
 ---
 
-<dialog id="demo" closedby="any" class="fixed inset-0 bg-bs-surface-0 m-auto z-50 p-6 md:p-12 rounded-xl w-full max-w-[95%] md:max-w-lg">
-
+<dialog
+  id="demo"
+  closedby="any"
+  class="fixed inset-0 bg-bs-surface-0 m-auto z-50 p-6 md:p-12 rounded-xl w-full max-w-[95%] md:max-w-lg"
+>
   <!-- Form -->
   <form method="dialog" class="flex gap-6 flex-col">
-
     <!-- Header -->
     <h2 class="text-2xl flex justify-between items-center gap-4">
+      <span>Reserva tu reparación</span>
 
-      <span>{ content.title }</span>
-
-      <button onclick="this.closest('dialog').close('close')" aria-label="Close"
-        class="bs-btn rounded-full !p-0 flex items-center justify-center h-10 w-10">
-
+      <button
+        onclick="this.closest('dialog').close('close')"
+        aria-label="Cerrar"
+        class="bs-btn rounded-full !p-0 flex items-center justify-center h-10 w-10"
+      >
         <X class="scale-75 opacity-75" width="32" height="32" />
-
       </button>
-
     </h2>
 
     <!-- Content -->
 
     <div class="flex flex-col gap-4">
-
       <!-- Intro -->
-      <div class="bs-body-text mb-3" set:html={ content.content } />
+      <div class="bs-body-text mb-3">
+        Rellena el siguiente formulario para reservar la reparación de tu
+        bicicleta. Te contactaremos lo antes posible para confirmar la cita.
+      </div>
 
-        <!-- Form inputs -->
+      <!-- Form inputs -->
 
-        <!-- Name -->
-        <label class="sr-only" for="name">Name</label>
+      <!-- Nombre -->
+      <label class="sr-only" for="nombre">Nombre</label>
 
-        <input
-          id="name"
-          type="text"
-          class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-          placeholder="Your name"
-        >
+      <input
+        id="nombre"
+        name="nombre"
+        type="text"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder="Tu nombre"
+      />
 
-        <!-- Company -->
-        <label class="sr-only" for="company">Company</label>
+      <!-- Email -->
+      <label class="sr-only" for="email">Email</label>
 
-        <input
-          id="company"
-          type="text"
-          class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-          placeholder="Your company"
-        >
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder="Tu email"
+      />
 
-        <!-- Email -->
-        <label class="sr-only" for="email">Email</label>
+      <!-- Teléfono -->
+      <label class="sr-only" for="telefono">Teléfono</label>
 
-        <input
-          id="email"
-          type="email"
-          class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-          placeholder="Your email"
-        >
+      <input
+        id="telefono"
+        name="telefono"
+        type="tel"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder="Tu teléfono"
+      />
 
-        <!-- Submit -->
-        <button class="bs-btn form-input px-4 py-3">{ content.cta }</button>
+      <!-- Tipo de reparación -->
+      <label class="sr-only" for="tipo">Tipo de reparación</label>
 
+      <select
+        id="tipo"
+        name="tipo"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+      >
+        <option value="">Selecciona el tipo de reparación</option>
+        <option value="ajuste">Ajuste y puesta a punto</option>
+        <option value="cambio">Cambio de componentes</option>
+        <option value="servicio">Servicio completo</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <!-- Recogida a domicilio -->
+      <label class="sr-only" for="recogida">¿Recogida a domicilio?</label>
+
+      <select
+        id="recogida"
+        name="recogida"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+      >
+        <option value="">¿Recogida a domicilio?</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <!-- Fecha preferida -->
+      <label class="sr-only" for="fecha">Fecha preferida</label>
+
+      <input
+        id="fecha"
+        name="fecha"
+        type="date"
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder="Fecha preferida"
+      />
+
+      <!-- Comentarios -->
+      <label class="sr-only" for="comentarios">Comentarios</label>
+
+      <textarea
+        id="comentarios"
+        name="comentarios"
+        rows="2"
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder="Comentarios adicionales"></textarea>
+
+      <!-- Submit -->
+      <button
+        class="bs-btn form-input px-4 py-3"
+        style="background-color: #554a8e; color: #fff; font-weight: 600;"
+        >Enviar reserva</button
+      >
     </div>
-
   </form>
-
 </dialog>
 
 <style>
-
-html:has(dialog[open]) {
-  overflow: hidden;
-  backdrop-filter: blur(0);
-  scrollbar-gutter: stable;
-}
-
-dialog[open]::backdrop {
-  backdrop-filter: blur(50px);
-}
-
-@keyframes scale-up {
-
-  to {
-    translate: 0 0;
-    scale: 1;
+  html:has(dialog[open]) {
+    overflow: hidden;
+    backdrop-filter: blur(0);
+    scrollbar-gutter: stable;
   }
 
-}
-
-@media (prefers-reduced-motion: no-preference) {
-
-  dialog {
-    translate: 0 2rem;
-    scale: .8
+  dialog[open]::backdrop {
+    backdrop-filter: blur(50px);
   }
 
-  dialog[open] {
-    animation: scale-up forwards 1s;
-    animation-timing-function: var(--ease-bs-spring);
+  @keyframes scale-up {
+    to {
+      translate: 0 0;
+      scale: 1;
+    }
   }
 
-}
+  @media (prefers-reduced-motion: no-preference) {
+    dialog {
+      translate: 0 2rem;
+      scale: 0.8;
+    }
 
-
+    dialog[open] {
+      animation: scale-up forwards 1s;
+      animation-timing-function: var(--ease-bs-spring);
+    }
+  }
 </style>

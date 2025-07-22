@@ -2,15 +2,26 @@
 const { title, testimonials } = Astro.props;
 ---
 
-<section class="bs-container bs-mt-lg">
+<section
+  class="bs-container bs-mt-lg"
+  style="background: #111; border-radius: 2rem; box-shadow: 0 4px 32px #554a8e22; padding: 2rem 1rem;"
+>
   <!-- Title -->
-  {title && <h2 class="bs-h2 text-center md:text-left">{title}</h2>}
-
+  {
+    title && (
+      <h2
+        class="bs-h2 text-center md:text-left"
+        style="font-family: 'Armageda', sans-serif; color: #fff; text-transform: uppercase;"
+      >
+        {title}
+      </h2>
+    )
+  }
   <!-- Testimonials -->
   <div
-    class="group bs-mt-md grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 place-content-center gap-4"
+    class="group bs-mt-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
   >
-    <!-- Script para expansión y contracción -->
+    {/* Script para expansión y contracción */}
     <script type="module" is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("[data-leer-toggle]").forEach((btn) => {
@@ -36,7 +47,6 @@ const { title, testimonials } = Astro.props;
     </script>
     {
       testimonials.map((item, idx) => {
-        // Si el testimonio es largo, ocupa 2 columnas
         const isLong = item.quote.length > 200;
         const colSpan = isLong ? "lg:col-span-2" : "";
         const quoteId = `testi-${idx}`;
@@ -44,18 +54,18 @@ const { title, testimonials } = Astro.props;
         return (
           <blockquote
             class:list={[
-              "group-hover:opacity-75 hover:opacity-100 duration-300 p-3 md:p-5 flex flex-col gap-3 justify-between border rounded-md bg-bs-surface-2 border-bs-surface-3 transition-all grid-flow-dense",
+              "bg-[#18122b] border border-[#eee] rounded-2xl shadow-lg p-6 flex flex-col gap-4 transition-transform duration-300 hover:scale-105",
               colSpan,
             ]}
+            style="color: #fff; min-height: 220px;"
           >
-            {/* Text + Botón en línea */}
-            <span class="inline-block text-sm lg:text-lg font-sans">
+            <span class="inline-block text-base lg:text-lg font-sans">
               <span
                 data-quote-id={quoteId}
                 data-full-text={item.quote}
                 data-short-text={shortText}
                 set:html={isLong ? shortText : item.quote}
-                style="display: inline;"
+                style="display: inline; color: #fff;"
               />
               {isLong && (
                 <button
@@ -63,13 +73,12 @@ const { title, testimonials } = Astro.props;
                   data-leer-toggle={quoteId}
                   data-expanded="false"
                   class="ml-2 align-baseline underline font-sans text-sm lg:text-lg"
-                  style="padding:0; background:none; border:none; cursor:pointer; color:#554a8e;"
+                  style="padding:0; background:none; border:none; cursor:pointer; color:#7c6fd6;"
                 >
                   Leer más
                 </button>
               )}
             </span>
-            {/* Estrellas */}
             <div class="flex flex-row items-center gap-1 mt-2 mb-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg
@@ -84,8 +93,7 @@ const { title, testimonials } = Astro.props;
                 </svg>
               ))}
             </div>
-            {/* Cite */}
-            <cite class="not-italic text-bs-foreground-dark text-sm font-semibold">
+            <cite class="not-italic text-[#7c6fd6] text-base font-semibold mt-2">
               @{item.handle}
             </cite>
           </blockquote>

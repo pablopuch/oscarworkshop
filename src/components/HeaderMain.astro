@@ -9,11 +9,11 @@ const { settings } = Astro.props;
     <a
       class="flex items-center gap-4 xl:min-w-32 group"
       href="/"
-      aria-label={settings.title + " - Home"}
+      aria-label="OSCAR WORKSHOP - Inicio"
     >
-
       <span
         class="logo-title text-3xl md:text-4xl transition-all duration-500 group-hover:text-[#6d5fc1] group-hover:scale-105"
+        style="font-family: 'Armageda', sans-serif; color: #554a8e; letter-spacing: 0.08em; text-transform: uppercase;"
       >
         OSCAR WORKSHOP
       </span>
@@ -21,7 +21,7 @@ const { settings } = Astro.props;
 
     <!-- CTA -->
     <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
-      {settings.demo.title}
+      Reserva tu reparación
     </button>
   </div>
 </header>

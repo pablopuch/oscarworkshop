@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
+import image from '@astrojs/image';
 
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  integrations: [image()],
   experimental: {
     fonts: [{
       provider: "local",

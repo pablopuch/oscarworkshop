@@ -5,23 +5,46 @@ import oscar_workshop3 from "../assets/theme-images/oscar_workshop3.jpg";
 const { settings, title, content } = Astro.props;
 ---
 
-<section class="bs-container py-6 flex flex-col lg:flex-row items-center">
+<section
+  class="bs-container py-6 flex flex-col lg:flex-row items-center relative overflow-hidden"
+>
+  {/* SVG decorativo fondo */}
+  <svg
+    class="absolute -top-10 -left-10 w-96 h-96 opacity-20 pointer-events-none"
+    viewBox="0 0 400 400"
+    fill="none"><circle cx="200" cy="200" r="200" fill="#554a8e"></circle></svg
+  >
   <div
     class="flex flex-col md:flex-row items-center justify-center gap-10 z-10 py-20 w-full max-w-5xl mx-auto"
   >
     <!-- Content -->
-    <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
+    <div
+      class="flex flex-col gap-6 lg:max-w-lg w-full py-16 animate-fadein-slideup bg-white/80 rounded-2xl shadow-lg p-8 md:p-0"
+    >
       <!-- Title -->
-      <h1 class="bs-h1" set:html={title} />
-
-      <!-- Content -->
+      <h1
+        class="bs-h1"
+        style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase; animation: fadein-slideup 1s;"
+      >
+        OSCAR WORKSHOP
+      </h1>
+      <!-- Subtítulo -->
       <div
-        class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark"
-        set:html={content}
-      />
+        class="bs-body-text xl:text-xl flex flex-col gap-4"
+        style="color: #222; animation: fadein-slideup 1.2s;"
+      >
+        Servicio de reparación de bicicletas
+      </div>
+      <!-- Botón CTA -->
+      <button
+        class="bs-btn mt-6 animate-pulse-onhover"
+        style="background-color: #554a8e; color: #fff; font-weight: 600; animation: fadein-slideup 1.4s;"
+        onclick="demo.showModal()">Reserva tu reparación</button
+      >
     </div>
-
-    <figure class="flex place-content-center -mt-20 lg:mt-0">
+    <figure
+      class="flex place-content-center -mt-20 lg:mt-0 transition-transform duration-1000 hover:scale-105 animate-zoom-in"
+    >
       <Image
         src={oscar_workshop3}
         format="avif"
@@ -31,4 +54,43 @@ const { settings, title, content } = Astro.props;
       />
     </figure>
   </div>
+  <style>
+    @keyframes fadein-slideup {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadein-slideup {
+      animation: fadein-slideup 1s both;
+    }
+    .animate-zoom-in {
+      animation: zoom-in 1.2s both;
+    }
+    @keyframes zoom-in {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .animate-pulse-onhover:hover {
+      animation: pulse 0.7s infinite alternate;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 #554a8e44;
+      }
+      100% {
+        box-shadow: 0 0 0 8px #554a8e11;
+      }
+    }
+  </style>
 </section>

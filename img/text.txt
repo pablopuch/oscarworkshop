@@ -1,4 +1,9 @@
-Oscar Workshop
+Quiero que te pongas en modo experto en programación/diseñador UI para una pagina web de un cliente.
+En este caso quiero que me realices las mejoras oportunas para el diseño y funcionamiento de la landing page del cliente. 
+
+Esta es algo de información del cliente.
+
+Oscar Workshop es un taller de bicicletas.
 
 Servicio de reparación de bicicletas
 Mecánico Certificado UCI Nivel 2 🌈
@@ -15,10 +20,116 @@ Quien me conoce sabe que me gusta el trabajo de calidad y bien hecho. Y eso es l
 
 Espero pronto seguir contando más avances sobre este proyecto que poco a poco va cogiendo forma.
 
-Who am I? Surely many already know me but I introduce myself:
+---
 
-I am Oscar Santana and I am 27 years old. Passionate about cycling and mechanics for some years, and after a long time of training and dedication as a mechanic, I started this crazy project that I had in my mind for a long time.
 
-Anyone who knows me knows that I like quality, well-done work. And that’s what I offer; Quality, effectiveness, immediacy and tranquility.
+## Plan de Sitio Web para Oscar Workshop
 
-I hope to soon continue telling more progress about this project that is slowly taking shape.
+### 1. Estructura de Secciones
+
+1. **Home (Inicio)**
+
+   *HeaderNav quiero el nombre de OSCAR WORKSHOP con al fuentes y el color (Armageda Regular, mayúsculas, color #554a8e). y luego en donde esta el boton "Need design?" quiero que lo cambies todo a español y el formulario que abre igual y lo adaptes los campos a la funcionalidad que le pueda ayudar a reservar a los clientes su reparación de bicicleta.
+
+   * **Hero Section**: Imagen o ilustración de alta calidad de taller o ciclista.
+
+     * Título: OSCAR WORKSHOP (Armageda Regular, mayúsculas, color #554a8e).
+     * Subtítulo: "Servicio de reparación de bicicletas"
+     * Botón CTA: "Reserva tu reparación".
+   * **Highlights**: Íconos con texto breve de:
+
+2. **Servicios**
+
+   * Listado de servicios con tarjetas:
+
+     * Ajustes y puestas a punto
+     * Cambio de componentes
+     * Servicio completo
+     * Recogida y entrega a domicilio 
+
+Cada uno con una foto, titulo, breve descripción del servicio. todo con las esquinas redondeadas.
+
+También me justaría tener un apartado de galería de fotos de los trabajos que a realizado.
+ 
+
+4. **Testimonios**
+
+   Esta parta esta echa solo hay que ajustarla un poco más.
+
+5. **Reservas y Contacto**
+
+   En la plantilla hay unos botones de "Need design?" y "Book a call"(en el footer) quiero que lo cambies todo a español y el formulario que abre igual y lo adaptes los campos a la funcionalidad que le pueda ayudar a reservar a los clientes su reparación de bicicleta.
+
+
+7. **Footer (Pie de página)**
+
+   * Enlaces rápidos a secciones.
+   * Información legal.
+   * Horario de atención.
+   * Redes sociales
+
+---
+
+2. Diseño y Estilo y Optimización de Imágenes
+
+Paleta de colores:
+
+Morado principal: #554a8e
+
+Negro (textos secundarios)
+
+Blanco (fondo principal)
+
+Tipografía:
+
+Logo: Armageda Regular (importar archivo .woff2 en src/assets/fonts).
+
+Textos: Sans-serif moderna (p.ej. Inter o system-ui).
+
+Imágenes y multimedia:
+
+Instalar y configurar el integration de imágenes de Astro (@astrojs/image o astro-imagetools).
+
+astro.config.mjs:
+
+import { defineConfig } from 'astro/config';
+import image from '@astrojs/image';
+
+export default defineConfig({
+  integrations: [image()],
+});
+
+Uso del componente <Image>:
+
+---
+import { Image } from '@astrojs/image/components';
+---
+<Image
+  src="/assets/taller.jpg"
+  alt="Taller de Oscar Workshop"
+  formats={["avif", "webp", "jpeg"]}
+  sizes="(max-width: 640px) 100vw, 640px"
+  placeholder="blur"
+  width={800}
+  height={600}
+  loading="lazy"
+/>
+
+Responsive: Define sizes y widths adaptados a breakpoints.
+
+Placeholder: usa placeholder="blur" o dominantColor para UX fluida.
+
+Formatos: genera avif y webp por defecto, con fallback JPEG.
+
+Cacheo: configura headers de caché en el servidor/CDN para assets.
+
+  * Preload de fuentes personalizadas.
+  * Minificación de HTML, CSS y JS.
+  * Uso de `astro-imagetools` para responsive images.
+  * Content Delivery Network (CDN) para assets.
+  * Caché de CPU y Service Worker para PWA.
+
+---
+
+Al final quiero que esto se convierta en una web profesional que permita a mi cliente atraer mas publico. Quiero que cuides mucho el SEO, la Accesibilidad y el diseño. Tiene que ser todo muy dinámico, robusto y atractivo. Añade algunos efectos pero siempre respetando los colores.  
+
