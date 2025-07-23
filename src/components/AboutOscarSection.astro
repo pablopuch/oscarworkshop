@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import imgRecogida from "../assets/theme-images/oscar_workshop-recogida.jpg";
 import imgLimpieza from "../assets/theme-images/oscar_workshop-limpieza.jpg";
 import imgMantenimiento from "../assets/theme-images/oscar_workshop-mantenimiento.jpg";
@@ -12,44 +12,76 @@ import imgWorkshop7 from "../assets/theme-images/oscar_workshop7.jpg";
 import imgWorkshop8 from "../assets/theme-images/oscar_workshop8.jpg";
 import imgWorkshop9 from "../assets/theme-images/oscar_workshop9.jpg";
 import imgWorkshop10 from "../assets/theme-images/oscar_workshop10.jpg";
+
+let modalOpen = false;
+let modalImg = null;
+function openModal(imgSrc, imgAlt) {
+  modalOpen = true;
+  modalImg = { src: imgSrc, alt: imgAlt };
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modalOpen = false;
+  modalImg = null;
+  document.body.style.overflow = '';
+}
 ---
 
-<section id="about-oscar" class="bs-section">
+<section
+  class="bs-container bs-mt-lg grid justify-center"
+  style="padding: 5rem 1rem;"
+>
   <div class="bs-container">
     <div class="text-center">
-      <h2 class="bs-h2">Sobre Oscar</h2>
-      <p class="bs-p-lead">Pasión y precisión en cada detalle.</p>
+      <h2
+        class="bs-h2 text-center md:text-left"
+        style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase;"
+      >
+        Trabajamos para ti
+      </h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+    <div class="group bs-mt-md grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 gallery-center">
       <div class="grid gap-4">
         <div>
           <Image
             src={imgRecogida}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Taller de bicicletas Oscar Workshop"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgRecogida.src, 'Taller de bicicletas Oscar Workshop')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgLimpieza}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Limpieza de bicicleta"
             width={500}
             height={333}
             format="webp"
+            on:click={() => openModal(imgLimpieza.src, 'Limpieza de bicicleta')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgMantenimiento}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Mantenimiento de bicicleta"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgMantenimiento.src, 'Mantenimiento de bicicleta')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
       </div>
@@ -57,31 +89,43 @@ import imgWorkshop10 from "../assets/theme-images/oscar_workshop10.jpg";
         <div>
           <Image
             src={imgWorkshop}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Interior del taller"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop.src, 'Interior del taller')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop3}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Detalle de herramienta"
             width={500}
             height={333}
             format="webp"
+            on:click={() => openModal(imgWorkshop3.src, 'Detalle de herramienta')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop4}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Bicicleta en el soporte"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop4.src, 'Bicicleta en el soporte')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
       </div>
@@ -89,31 +133,43 @@ import imgWorkshop10 from "../assets/theme-images/oscar_workshop10.jpg";
         <div>
           <Image
             src={imgWorkshop5}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Ruedas de bicicleta"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop5.src, 'Ruedas de bicicleta')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop6}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Componentes de bicicleta"
             width={500}
             height={333}
             format="webp"
+            on:click={() => openModal(imgWorkshop6.src, 'Componentes de bicicleta')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop7}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Ajuste de cambios"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop7.src, 'Ajuste de cambios')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
       </div>
@@ -121,34 +177,143 @@ import imgWorkshop10 from "../assets/theme-images/oscar_workshop10.jpg";
         <div>
           <Image
             src={imgWorkshop8}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Mecánico trabajando"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop8.src, 'Mecánico trabajando')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop9}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Bicicleta de carretera"
             width={500}
             height={333}
             format="webp"
+            on:click={() => openModal(imgWorkshop9.src, 'Bicicleta de carretera')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
         <div>
           <Image
             src={imgWorkshop10}
-            class="h-auto max-w-full rounded-lg"
+            class="h-auto max-w-full rounded-lg interactive-img"
             alt="Entrada del taller"
             width={500}
             height={750}
             format="webp"
+            on:click={() => openModal(imgWorkshop10.src, 'Entrada del taller')}
+            tabindex="0"
+            role="button"
+            aria-label="Ver imagen grande"
           />
         </div>
       </div>
     </div>
   </div>
+
+  {modalOpen && modalImg && (
+    <div class="modal-overlay" on:click={closeModal} tabindex="-1">
+      <div class="modal-content" on:click={e => e.stopPropagation()}>
+        <button class="modal-close" on:click={closeModal} aria-label="Cerrar">&times;</button>
+        <img src={modalImg.src} alt={modalImg.alt} class="modal-img" />
+        <p class="modal-caption">{modalImg.alt}</p>
+      </div>
+    </div>
+  )}
 </section>
+
+<style>
+  .gallery-center {
+    justify-items: center;
+  }
+  @media (min-width: 768px) {
+    .gallery-center {
+      justify-items: stretch;
+    }
+  }
+  .interactive-img {
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(85,74,142,0.08);
+  }
+  .interactive-img:hover,
+  .interactive-img:focus {
+    transform: scale(1.07);
+    box-shadow: 0 8px 24px rgba(85,74,142,0.18);
+    z-index: 2;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    .interactive-img:active {
+      transform: scale(1.07);
+      box-shadow: 0 8px 24px rgba(85,74,142,0.18);
+      z-index: 2;
+    }
+  }
+  /* Modal styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s;
+  }
+  .modal-content {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 8px 32px rgba(85,74,142,0.25);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: popIn 0.2s;
+  }
+  .modal-img {
+    max-width: 80vw;
+    max-height: 60vh;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .modal-caption {
+    color: #554a8e;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #554a8e;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.2s;
+  }
+  .modal-close:hover {
+    color: #7c6fd6;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes popIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+  }
+</style>

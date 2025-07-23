@@ -3,11 +3,10 @@ const { caseStudy, serviceDescription } = Astro.props;
 ---
 
 <!-- Wrapper -->
-<div class="group @container">
   <!-- Case study -->
   <article
     class:list={[
-      "relative isolate flex flex-col h-full w-full gap-6 overflow-hidden rounded-2xl shadow-lg bg-[#18122b] border border-[#eee] transition-transform duration-300 hover:scale-105",
+      "relative isolate flex flex-col h-full w-full gap-6 overflow-hidden rounded-2xl shadow-lg border border-[#eee] transition-transform duration-300 hover:scale-105",
       caseStudy.bg,
     ]}
     style="min-height: 480px;"
@@ -21,7 +20,7 @@ const { caseStudy, serviceDescription } = Astro.props;
       width="400"
     />
     <!-- Content -->
-    <div class="z-10 flex flex-col gap-4 p-6 flex-1">
+    <div class="z-10 flex flex-col gap-4 p-6 flex-1 ">
       <!-- Header -->
       <header class="flex flex-col gap-1">
         <div
@@ -40,4 +39,3 @@ const { caseStudy, serviceDescription } = Astro.props;
       >
     </div>
   </article>
-</div>

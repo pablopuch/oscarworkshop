@@ -20,8 +20,12 @@ const { settings } = Astro.props;
     </a>
 
     <!-- CTA -->
-    <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
-      Reserva tu reparación
+    <button
+      type="button"
+      class="min-w-32 bs-btn"
+      onclick="document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' })"
+    >
+      Ver servicios
     </button>
   </div>
 </header>

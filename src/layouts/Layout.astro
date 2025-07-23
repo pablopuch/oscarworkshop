@@ -1,57 +1,59 @@
 ---
+import "../assets/css/global.css";
+import "../assets/css/base.css";
+import "../assets/css/typography.css";
+import "../assets/css/layout.css";
+import "../assets/css/buttons.css";
 
-import '../assets/css/global.css'
-import "../assets/css/base.css"
-import "../assets/css/typography.css"
-import "../assets/css/layout.css"
-import "../assets/css/buttons.css"
+import { Font } from "astro:assets";
 
-import { Font } from 'astro:assets';
+import Image from "astro/components/Image.astro";
 
-import Image from "astro/components/Image.astro"
+import global_settings from "../data/global_settings.json";
 
-import global_settings from "../data/global_settings.json"
+import DialogModal from "../components/DialogModal.astro";
+import FooterMain from "../components/FooterMain.astro";
+import HeaderMain from "../components/HeaderMain.astro";
 
-import DialogModal from "../components/DialogModal.astro"
-import FooterMain from "../components/FooterMain.astro"
-import HeaderMain from "../components/HeaderMain.astro"
-
-const { title, description } = Astro.props
-
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-
   <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>{ title ?? global_settings.title }</title>
+    <title>{title ?? global_settings.title}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <meta name="description" content={ description ?? global_settings.description } />
-    <meta name="theme-color" content={ global_settings.theme_color } />
+    <meta
+      name="description"
+      content={description ?? global_settings.description}
+    />
+    <meta name="theme-color" content={global_settings.theme_color} />
 
-    <meta property="og:title" content={ title ?? global_settings.title } />
-    <meta property="og:description" content={ description ?? global_settings.description } />
+    <meta property="og:title" content={title ?? global_settings.title} />
+    <meta
+      property="og:description"
+      content={description ?? global_settings.description}
+    />
     <meta
       property="og:image"
-      content={ global_settings.base_url + global_settings.social_image }
+      content={global_settings.base_url + global_settings.social_image}
     />
 
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-display" preload />
-
   </head>
 
   <body id="top">
-
     <!-- Skip link -->
-    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">Skip to content</a>
-
+    <a
+      class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300"
+      href="#main">Skip to content</a
+    >
 
     <!-- Header -->
     <!-- <HeaderMain settings={ global_settings } /> -->
@@ -61,12 +63,83 @@ const { title, description } = Astro.props
       <slot />
     </main>
 
+    <!-- Botón flotante scroll to top -->
+    <button
+      id="scrollToTopBtn"
+      aria-label="Volver arriba"
+      style="display:none;position:fixed;bottom:2.5rem;right:2rem;z-index:9999;background:#fff;border:none;border-radius:50%;width:64px;height:64px;box-shadow:0 4px 16px #554a8e33;cursor:pointer;align-items:center;justify-content:center;transition:opacity 0.3s; padding:0;"
+    >
+      <svg
+        class="bike-wheel-svg"
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="18"
+          stroke="#554a8e"
+          stroke-width="3"
+          fill="#fff"></circle>
+        <circle
+          cx="20"
+          cy="20"
+          r="4"
+          stroke="#554a8e"
+          stroke-width="2"
+          fill="#fff"></circle>
+        <g stroke="#554a8e" stroke-width="1.5">
+          <line x1="20" y1="2" x2="20" y2="38"></line>
+          <line x1="2" y1="20" x2="38" y2="20"></line>
+          <line x1="7.8" y1="7.8" x2="32.2" y2="32.2"></line>
+          <line x1="7.8" y1="32.2" x2="32.2" y2="7.8"></line>
+        </g>
+      </svg>
+    </button>
+    <style>
+      #scrollToTopBtn .bike-wheel-svg {
+        transition: transform 0.5s cubic-bezier(0.4, 2, 0.6, 1);
+      }
+      #scrollToTopBtn:hover .bike-wheel-svg,
+      #scrollToTopBtn:focus .bike-wheel-svg,
+      #scrollToTopBtn:active .bike-wheel-svg {
+        transform: rotate(360deg);
+      }
+      #scrollToTopBtn {
+        display: flex;
+      }
+      @media (max-width: 600px) {
+        #scrollToTopBtn {
+          bottom: 4.5rem !important;
+        }
+      }
+    </style>
+
+    <script is:inline>
+      const btn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 120) {
+          btn.style.display = "flex";
+          btn.style.opacity = "1";
+        } else {
+          btn.style.opacity = "0";
+          setTimeout(() => {
+            btn.style.display = "none";
+          }, 300);
+        }
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
     <!-- Footer -->
-    <FooterMain settings={ global_settings } />
+    <FooterMain settings={global_settings} />
 
     <!-- Demo dialog modal -->
-    <DialogModal id="demo" content={ global_settings.demo }>
-
+    <DialogModal id="demo" content={global_settings.demo} />
   </body>
 </html>
-

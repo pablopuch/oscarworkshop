@@ -7,17 +7,17 @@ const { title, faq } = Astro.props;
 <section
   class="bs-container bs-mt-lg grid"
   id="faq"
-  style="background: #111; border-radius: 2rem; box-shadow: 0 4px 32px #554a8e22; padding: 2rem 1rem;"
+  style="padding: 2rem 1rem;"
 >
   <!-- Title -->
   <h2
-    class="bs-h2 text-center md:text-left"
-    style="font-family: 'Armageda', sans-serif; color: #fff; text-transform: uppercase;"
+    class="bs-h2 text-center md:text-left pb-8"
+    style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase;"
   >
     Preguntas frecuentes
   </h2>
   <!-- FAQ -->
-  <div class="grid gap-2 bs-mt-sm">
+  <div class="group bs-mt-md grid gap-2 bs-mt-sm">
     <DetailsAccordion
       question="¿Cuánto tarda una reparación habitual?"
       answer="Depende del tipo de reparación, pero la mayoría se completan en 24-48h. Si necesitas urgencia, ¡avísanos!"

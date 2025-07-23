@@ -4,23 +4,22 @@ import services from "../data/services.json";
 ---
 
 <section
-  class="bs-container bs-mt-lg"
   id="servicios"
-  style="background: #111; border-radius: 2rem; box-shadow: 0 4px 32px #554a8e22; padding: 2rem 1rem;"
+  class="bs-container bs-mt-lg"
+  style="padding: 2rem 1rem;"
 >
   <!-- Header -->
   <h2
     class="bs-h2 text-center md:text-left"
-    style="font-family: 'Armageda', sans-serif; color: #fff; text-transform: uppercase;"
+    style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase;"
   >
     Servicios
   </h2>
-  <p class="text-center md:text-left text-lg mb-8" style="color: #fff;">
-    Soluciones integrales para tu bicicleta: recogida, limpieza, mantenimiento y
-    más.
-  </p>
+
   <!-- Servicios -->
-  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+  <div
+    class="group bs-mt-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8"
+  >
     {
       services.map((servicio) => (
         <CardCaseStudy
@@ -30,13 +29,4 @@ import services from "../data/services.json";
       ))
     }
   </div>
-  <style>
-    .bs-container {
-      background: #111;
-    }
-    .bs-h2,
-    p {
-      color: #fff;
-    }
-  </style>
 </section>
