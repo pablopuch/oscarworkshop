@@ -1,198 +1,154 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from 'astro:assets';
+import imgRecogida from "../assets/theme-images/oscar_workshop-recogida.jpg";
+import imgLimpieza from "../assets/theme-images/oscar_workshop-limpieza.jpg";
+import imgMantenimiento from "../assets/theme-images/oscar_workshop-mantenimiento.jpg";
+import imgWorkshop from "../assets/theme-images/oscar_workshop.jpg";
+import imgWorkshop3 from "../assets/theme-images/oscar_workshop3.jpg";
+import imgWorkshop4 from "../assets/theme-images/oscar_workshop4.jpg";
+import imgWorkshop5 from "../assets/theme-images/oscar_workshop5.jpg";
+import imgWorkshop6 from "../assets/theme-images/oscar_workshop6.jpg";
+import imgWorkshop7 from "../assets/theme-images/oscar_workshop7.jpg";
+import imgWorkshop8 from "../assets/theme-images/oscar_workshop8.jpg";
+import imgWorkshop9 from "../assets/theme-images/oscar_workshop9.jpg";
+import imgWorkshop10 from "../assets/theme-images/oscar_workshop10.jpg";
 ---
 
-<section
-    class="w-full flex flex-col items-center py-12 bg-bs-surface-2"
-    id="galeria"
->
-    <h2
-        class="bs-h2 mb-8 text-center"
-        style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase;"
-    >
-        Galería de trabajos
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-        <Image
-            src="/src/assets/theme-images/oscar_workshop-recogida.jpg"
-            alt="Recogida de bicicleta"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop-limpieza.jpg"
-            alt="Limpieza profesional"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop-mantenimiento.jpg"
-            alt="Mantenimiento y montaje"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop.jpg"
-            alt="Taller Oscar Workshop"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop3.jpg"
-            alt="Oscar trabajando"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop4.jpg"
-            alt="Trabajo realizado 4"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop5.jpg"
-            alt="Trabajo realizado 5"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop6.jpg"
-            alt="Trabajo realizado 6"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop7.jpg"
-            alt="Trabajo realizado 7"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop8.jpg"
-            alt="Trabajo realizado 8"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop9.jpg"
-            alt="Trabajo realizado 9"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
-        <Image
-            src="/src/assets/theme-images/oscar_workshop10.jpg"
-            alt="Trabajo realizado 10"
-            format="avif"
-            sizes="(max-width: 640px) 100vw, 400px"
-            width={400}
-            height={256}
-            loading="lazy"
-            class="rounded-2xl shadow-lg object-cover w-full h-64"
-        />
+<section id="about-oscar" class="bs-section">
+  <div class="bs-container">
+    <div class="text-center">
+      <h2 class="bs-h2">Sobre Oscar</h2>
+      <p class="bs-p-lead">Pasión y precisión en cada detalle.</p>
     </div>
-    <!-- Mapa de ubicación -->
-    <div class="w-full max-w-3xl mt-10 flex flex-col items-center">
-        <h3
-            class="text-xl font-bold mb-2 flex items-center gap-2"
-            style="color: #554a8e;"
-        >
-            <svg width="24" height="24" fill="#554a8e" viewBox="0 0 24 24"
-                ><path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
-                ></path></svg
-            >¿Dónde estamos?
-        </h3>
-        <div
-            class="relative w-full rounded-2xl shadow-lg overflow-hidden"
-            style="border: 3px solid #554a8e; background: linear-gradient(135deg, #f5f3ff 60%, #e0e7ff 100%);"
-        >
-            <iframe
-                src="https://www.google.com/maps?q=Camino+Cruz+del+Gamonal,+150,+Santa+Br%C3%ADgida,+Canarias,+Spain+35300&output=embed"
-                width="100%"
-                height="300"
-                style="border:0; border-radius: 2rem;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <!-- Pin animado -->
-            <svg
-                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-2/3 animate-bounce"
-                width="40"
-                height="40"
-                fill="#554a8e"
-                viewBox="0 0 24 24"
-                ><path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
-                ></path></svg
-            >
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      <div class="grid gap-4">
+        <div>
+          <Image
+            src={imgRecogida}
+            class="h-auto max-w-full rounded-lg"
+            alt="Taller de bicicletas Oscar Workshop"
+            width={500}
+            height={750}
+            format="webp"
+          />
         </div>
-        <button
-            class="mt-4 px-6 py-2 rounded-full font-semibold text-white"
-            style="background: linear-gradient(90deg, #554a8e 60%, #7c6fd6 100%); box-shadow: 0 2px 8px #554a8e44; transition: transform 0.2s;"
-            onclick="window.open('https://goo.gl/maps/6Qw2Qw2Qw2Qw2Qw2A', '_blank')"
-            onmouseover="this.style.transform='scale(1.05)'"
-            onmouseout="this.style.transform='scale(1)'"
-            >Abrir en Google Maps</button
-        >
-        <p class="text-center text-sm text-gray-600 mt-2">
-            Camino Cruz del Gamonal, Nº150, Santa Brígida, Canarias, Spain 35300
-        </p>
+        <div>
+          <Image
+            src={imgLimpieza}
+            class="h-auto max-w-full rounded-lg"
+            alt="Limpieza de bicicleta"
+            width={500}
+            height={333}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgMantenimiento}
+            class="h-auto max-w-full rounded-lg"
+            alt="Mantenimiento de bicicleta"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div>
+          <Image
+            src={imgWorkshop}
+            class="h-auto max-w-full rounded-lg"
+            alt="Interior del taller"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop3}
+            class="h-auto max-w-full rounded-lg"
+            alt="Detalle de herramienta"
+            width={500}
+            height={333}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop4}
+            class="h-auto max-w-full rounded-lg"
+            alt="Bicicleta en el soporte"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div>
+          <Image
+            src={imgWorkshop5}
+            class="h-auto max-w-full rounded-lg"
+            alt="Ruedas de bicicleta"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop6}
+            class="h-auto max-w-full rounded-lg"
+            alt="Componentes de bicicleta"
+            width={500}
+            height={333}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop7}
+            class="h-auto max-w-full rounded-lg"
+            alt="Ajuste de cambios"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div>
+          <Image
+            src={imgWorkshop8}
+            class="h-auto max-w-full rounded-lg"
+            alt="Mecánico trabajando"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop9}
+            class="h-auto max-w-full rounded-lg"
+            alt="Bicicleta de carretera"
+            width={500}
+            height={333}
+            format="webp"
+          />
+        </div>
+        <div>
+          <Image
+            src={imgWorkshop10}
+            class="h-auto max-w-full rounded-lg"
+            alt="Entrada del taller"
+            width={500}
+            height={750}
+            format="webp"
+          />
+        </div>
+      </div>
     </div>
-    <style>
-        .animate-bounce {
-            animation: bounce 1.2s infinite alternate;
-        }
-        @keyframes bounce {
-            0% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(10px);
-            }
-        }
-    </style>
+  </div>
 </section>

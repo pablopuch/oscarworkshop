@@ -5,91 +5,452 @@ import oscar_workshop3 from "../assets/theme-images/oscar_workshop3.jpg";
 const { settings, title, content } = Astro.props;
 ---
 
-<section
-  class="bs-container py-6 flex flex-col lg:flex-row items-center relative overflow-hidden"
->
-  {/* SVG decorativo fondo */}
-  <svg
-    class="absolute -top-10 -left-10 w-96 h-96 opacity-20 pointer-events-none"
-    viewBox="0 0 400 400"
-    fill="none"><circle cx="200" cy="200" r="200" fill="#554a8e"></circle></svg
-  >
-  <div
-    class="flex flex-col md:flex-row items-center justify-center gap-10 z-10 py-20 w-full max-w-5xl mx-auto"
-  >
-    <!-- Content -->
-    <div
-      class="flex flex-col gap-6 lg:max-w-lg w-full py-16 animate-fadein-slideup bg-white/80 rounded-2xl shadow-lg p-8 md:p-0"
-    >
-      <!-- Title -->
-      <h1
-        class="bs-h1"
-        style="font-family: 'Armageda', sans-serif; color: #554a8e; text-transform: uppercase; animation: fadein-slideup 1s;"
-      >
-        OSCAR WORKSHOP
-      </h1>
-      <!-- Subtítulo -->
-      <div
-        class="bs-body-text xl:text-xl flex flex-col gap-4"
-        style="color: #222; animation: fadein-slideup 1.2s;"
-      >
-        Servicio de reparación de bicicletas
+<section class="hero-section">
+  <!-- Elementos decorativos de fondo -->
+  <div class="hero-bg"></div>
+  <div class="gradient-overlay"></div>
+
+  <!-- Contenido principal -->
+  <div class="bs-container hero-content">
+    <div class="hero-grid">
+      <!-- Columna de contenido -->
+      <div class="content-column">
+        <!-- Badge superior -->
+        <div class="hero-badge">
+          <span class="badge-text">Pasión por el Ciclismo</span>
+          <div class="badge-glow"></div>
+        </div>
+
+        <!-- Título principal -->
+        <h1 class="hero-title">
+          <span class="title-main">OSCAR</span>
+          <span class="title-accent">WORDSHOP</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="hero-subtitle">
+          Ajustes, reparaciones y mejoras con componentes<br />
+          de alta gama para tu bicicleta.
+        </p>
+
+        <!-- Características destacadas -->
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>Diagnóstico y presupuesto sin coste</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>Componentes de primeras marcas</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <span>Optimización del rendimiento</span>
+          </div>
+        </div>
+
+        <!-- Botones CTA -->
+        <div class="cta-buttons">
+          <button class="btn-primary" onclick="demo.showModal()">
+            <span>Reserva tu reparación</span>
+            <div class="btn-glow"></div>
+          </button>
+          <a href="#servicios" class="btn-secondary"> Ver servicios </a>
+        </div>
       </div>
-      <!-- Botón CTA -->
-      <button
-        class="bs-btn mt-6 animate-pulse-onhover"
-        style="background-color: #554a8e; color: #fff; font-weight: 600; animation: fadein-slideup 1.4s;"
-        onclick="demo.showModal()">Reserva tu reparación</button
-      >
+
+      <!-- Columna de imagen -->
+      <div class="image-column">
+        <div class="image-container">
+          <div class="image-glow"></div>
+          <figure class="hero-image">
+            <Image
+              src={oscar_workshop3}
+              format="avif"
+              quality="high"
+              alt="Taller Oscar Workshop - Servicio profesional de reparación de bicicletas"
+              loading="eager"
+              class="main-image"
+            />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <p class="overlay-title">+10 años</p>
+                <p class="overlay-subtitle">de experiencia</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
     </div>
-    <figure
-      class="flex place-content-center -mt-20 lg:mt-0 transition-transform duration-1000 hover:scale-105 animate-zoom-in"
-    >
-      <Image
-        src={oscar_workshop3}
-        format="avif"
-        quality="high"
-        alt="Taller Oscar Workshop"
-        loading="eager"
-      />
-    </figure>
   </div>
+
   <style>
-    @keyframes fadein-slideup {
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+
+    /* Fondo temático de taller */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80"><path fill="%23554a8e" fill-opacity="0.06" d="M40 29.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21zM40 49a9 9 0 1 1 0-18 9 9 0 0 1 0 18zm-25-14a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM15 44a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm50-4a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM65 44a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM40 0a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM40 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 56a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zM40 74a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path></svg>');
+      background-size: 80px;
+      animation: pan-bg 60s linear infinite;
+    }
+
+    @keyframes pan-bg {
       from {
-        opacity: 0;
-        transform: translateY(40px);
+        background-position: 0 0;
       }
       to {
-        opacity: 1;
-        transform: translateY(0);
+        background-position: -800px 800px;
       }
     }
-    .animate-fadein-slideup {
-      animation: fadein-slideup 1s both;
+
+    .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 30% 50%,
+        rgba(85, 74, 142, 0.05) 0%,
+        transparent 50%
+      );
     }
-    .animate-zoom-in {
-      animation: zoom-in 1.2s both;
+
+    /* Contenido principal */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 5rem 0;
     }
-    @keyframes zoom-in {
-      from {
-        transform: scale(0.95);
-        opacity: 0;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 4fr 5fr; /* Más espacio para la imagen */
+        gap: 5rem;
       }
-      to {
-        transform: scale(1);
-        opacity: 1;
+    }
+
+    /* Columna de contenido */
+    .content-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .content-column {
+        text-align: left;
       }
     }
-    .animate-pulse-onhover:hover {
-      animation: pulse 0.7s infinite alternate;
+
+    /* Badge superior */
+    .hero-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      animation: slideInUp 0.8s ease-out;
     }
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 #554a8e44;
+
+    @media (min-width: 1024px) {
+      .hero-badge {
+        margin: 0;
       }
+    }
+
+    .badge-text {
+      position: relative;
+      z-index: 2;
+      padding: 0.75rem 1.5rem;
+      background: rgba(85, 74, 142, 0.1);
+      color: #554a8e;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 2rem;
+      border: 1px solid rgba(85, 74, 142, 0.2);
+    }
+
+    .badge-glow {
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #554a8e, #7c6fd6);
+      border-radius: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .hero-badge:hover .badge-glow {
+      opacity: 0.2;
+    }
+
+    /* Título principal */
+    .hero-title {
+      font-family: "Armageda", sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: bold;
+      line-height: 1.1;
+      text-transform: uppercase;
+      animation: slideInUp 0.8s ease-out 0.2s both;
+    }
+
+    .title-main {
+      display: block;
+      color: #554a8e;
+    }
+
+    .title-accent {
+      display: block;
+      background: linear-gradient(45deg, #7c6fd6, #554a8e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Subtítulo */
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 4vw, 1.5rem);
+      color: #64748b;
+      font-weight: 300;
+      line-height: 1.6;
+      animation: slideInUp 0.8s ease-out 0.4s both;
+    }
+
+    /* Lista de características */
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      animation: slideInUp 0.8s ease-out 0.6s both;
+    }
+
+    @media (min-width: 1024px) {
+      .features-list {
+        justify-content: flex-start;
+      }
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .feature-dot {
+      width: 6px;
+      height: 6px;
+      background: #554a8e;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Botones CTA */
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      animation: slideInUp 0.8s ease-out 0.8s both;
+    }
+
+    @media (min-width: 640px) {
+      .cta-buttons {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-buttons {
+        align-items: flex-start;
+      }
+    }
+
+    .btn-primary {
+      position: relative;
+      padding: 1rem 2rem;
+      background: #554a8e;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(85, 74, 142, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #7c6fd6;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(85, 74, 142, 0.4);
+    }
+
+    .btn-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .btn-primary:hover .btn-glow {
+      transform: translateX(100%);
+    }
+
+    .btn-secondary {
+      padding: 1rem 2rem;
+      color: #554a8e;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #554a8e;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #554a8e;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Columna de imagen */
+    .image-column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1500px; /* Añade perspectiva para el efecto 3D */
+    }
+
+    @media (min-width: 1024px) {
+      .image-column {
+        justify-content: flex-end;
+      }
+    }
+
+    .image-container {
+      position: relative;
+      animation: slideInRight 1s ease-out 0.3s both;
+    }
+
+    .image-glow {
+      position: absolute;
+      inset: -1rem;
+      background: linear-gradient(45deg, #554a8e, #7c6fd6);
+      border-radius: 1.5rem;
+      opacity: 0.2;
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+
+    .main-image {
+      border-radius: 1.5rem; /* 24px */
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .image-container:hover .main-image {
+      transform: scale(1.03) rotateY(-5deg); /* Efecto sutil al pasar el ratón */
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hero-image:hover .image-overlay {
+      opacity: 1;
+    }
+
+    .overlay-content {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .overlay-subtitle {
+      font-size: 1rem;
+    }
+
+    /* Animaciones */
+    @keyframes pulse-glow {
+      0%,
       100% {
-        box-shadow: 0 0 0 8px #554a8e11;
+        opacity: 0.2;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
       }
     }
   </style>
